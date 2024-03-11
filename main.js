@@ -1,219 +1,398 @@
-// - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-// const c = (a,b) =>{
-//    return a*b
-// }
-// console.log(c(5,2))
+// - Знайти та вивести довижину настипних стрінгових значень
+// 'hello world', 'lorem ipsum', 'javascript is cool'
 
-
-// //- створити функцію яка обчислює та повертає площу кола з радіусом r
-// const circle=(p,r) =>{
-//     return p*(r*r)
-// }
-// console.log(circle(3.14, 60))
-
-
-// //- створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-// const cylinder=(h,r) =>{
-//     const p = 3.14
-//     return 2*p*r*h
-// }
-// console.log(cylinder(2,2))
-
-
-
-//- створити функцію яка приймає масив та виводить кожен його елемент
+// let str1='hello world'
+// let str2='lorem ipsum'
+// let str3='javascript is cool'
 //
-// let arr=[1,2,3,4,5]
+// console.log('str1:',str1.length)
+// console.log('str2:',str2.length)
+// console.log('str3:',str3.length)
 //
-// const arr1=(arr) =>{
-//     for (let number of arr) {
-//         console.log(number)
+//
+
+// - Перевести до великого регістру наступні стрінгові значення
+// 'hello world', 'lorem ipsum', 'javascript is cool'
+
+//  let str1='hello world'
+//  let str2='lorem ipsum'
+//  let str3='javascript is cool'
+//
+//
+// console.log(str1.toUpperCase())
+// console.log(str2.toUpperCase())
+// console.log(str3.toUpperCase())
+
+
+// - Перевести до нижнього регістру настипні стрінгові значення
+// 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+
+// let str1='HELLO WORLD'
+// let str2='LOREM IPSUM'
+// let str3='JAVASCRIPT IS COOL'
+//
+// console.log(str1.toLowerCase())
+// console.log(str2.toLowerCase())
+// console.log(str3.toLowerCase())
+//
+
+
+
+// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+
+// let str1='     dirty string    '
+//
+// console.log(str1.trim())
+
+
+
+// - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+//     let str = 'Ревуть воли як ясла повні';
+//
+// let str='Ревуть воли як ясла повні'
+//
+// console.log(str.split(' '))
+//
+
+
+// - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
+
+// let arr=[10,8,-7,55,987,-1011,0,1050,0]
+//
+// let str=arr.map(number =>number.toString() )
+// console.log(str)
+//
+
+
+
+// - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
+//     let nums = [11,21,3];
+// sortNums(nums,'ascending') // [3,11,21]
+// sortNums(nums,'descending') // [21,11,3]
+//
+
+// let nums = [11,21,3];
+//
+// let sortNums=(arr,direction) =>{
+//
+//     if (direction ==='ascending'){
+//
+//         arr.sort((a,b)=>  a-b )
+//
+//     }
+//
+//     else{
+//          arr.sort((a,b)=>b-a )
+//
 //     }
 //
 // }
-// arr1(arr)
+// sortNums(nums,'descending   ')
+// console.log(nums)
+
+
+// ==========================
+// - є масив
+ let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+     {title: 'Java Complex', monthDuration: 6},
+     {title: 'Python Complex', monthDuration: 6},
+     {title: 'QA Complex', monthDuration: 4},
+     {title: 'FullStack', monthDuration: 7},
+     {title: 'Frontend', monthDuration: 4}
+ ];
+
+
+// -- відсортувати його за спаданням за monthDuration
+// coursesAndDurationArray.sort((a,b) =>b.monthDuration - a.monthDuration)
+// console.log(coursesAndDurationArray)
 
 
 
-// //- створити функцію яка створює параграф з текстом. Текст задати через аргумент
-
-// const text=(string) =>{
-//     document.write(`<p>${string}</p>`)
-// }
-// text('lalalend')
+// -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+// let numbers=coursesAndDurationArray.filter((num)=>num.monthDuration >=5)
+// console.log(numbers)
 
 
-// //- створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-
-// function t1(text){
-//     document.write(`<ul>
-//                         <li>${text}</li>
-//                         <li>${text}</li>
-//                         <li>${text}</li>
-// </ul>`)
-// }
-//
-// t1('lalala')
-
-
-//- створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
-// Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-//
-//
-// function createULWithCount(text, count) {
-//
-//    for (let i = 0; i < count; i++) {
-//        document.write(`<ul>
-//                             <li>${text}</li>
-//                        </ul>`)
-//      }
-//
-//  }
-
-// createULWithCount('any text',3)
-
-
-// const createULWithCount=(text, count) =>{
-//     for (let i = 0; i < count; i++) {
-//         document.write(`<ul>
-//                             <li>${text}</li>
-//                        </ul>`)
-//     }
-//
-// }
-// createULWithCount('any text',3)
-
-
-
- //- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
-
-
-
-// const chact =[1,true,'okten']
-//
-// const listElements=(array) => {
-//     for (let resultListElement of array) {
-//             document.write(`<ul>
-//                           <li>${resultListElement}</li>
-//                       </ul>`)
+// -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+// let box=coursesAndDurationArray.map((element,index)=>{
+//     let u={
+//         id:index,
+//         title:element.title,
+//         monthDuration: element.monthDuration
 //
 //     }
-//     }
-// listElements(chact)
-
-
-
-// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-
-// const list =(array)=>{
-//         array.forEach(item => {
-//        document.write(`<div>ID: ${item.id}</div>`)
-//         document.write(`<div>Name: ${item.name}</div>`)
-//        document.write(`<br>`)
-//      })
-//   }
-//   const objects= [
-//      { id:1,name: 'Ivan', age: 20 },
-//      { id: 2, name: 'Misha', age: 27 },
-//      { id: 3, name: 'Sergiy', age:41 }
-//   ]
+//     return u
+// })
 //
-// list(objects)
+// console.log(box)
+
+
+// =========================
+//     описати колоду карт (від 6 до туза без джокерів)
+// let cards=[
+//     { cardSuit: 'spade', value: '6', color:'black'},
+//     { cardSuit: 'diamond', value: '6', color:'red'},
+//     { cardSuit: 'clubs', value: '6', color:'black'},
+//     { cardSuit: 'heart', value: '6', color:'red'},
+//     { cardSuit: 'spade', value: '7', color:'black'},
+//     { cardSuit: 'diamond', value: '7', color:'red'},
+//     { cardSuit: 'clubs', value: '7', color:'black'},
+//     { cardSuit: 'heart', value: '7', color:'red'},
+//     { cardSuit: 'spade', value: '8', color:'black'},
+//     { cardSuit: 'diamond', value: '8', color:'red'},
+//     { cardSuit: 'clubs', value: '8', color:'black'},
+//     { cardSuit: 'heart', value: '8', color:'red'},
+//     { cardSuit: 'spade', value: '9', color:'black'},
+//     { cardSuit: 'diamond', value: '9', color:'red'},
+//     { cardSuit: 'clubs', value: '9', color:'black'},
+//     { cardSuit: 'heart', value: '9', color:'red'},
+//     { cardSuit: 'spade', value: '10', color:'black'},
+//     { cardSuit: 'diamond', value: '10', color:'red'},
+//     { cardSuit: 'clubs', value: '10', color:'black'},
+//     { cardSuit: 'heart', value: '10', color:'red'},
+//     { cardSuit: 'spade', value: 'jack', color:'black'},
+//     { cardSuit: 'diamond', value: 'jack', color:'red'},
+//     { cardSuit: 'clubs', value: 'jack', color:'black'},
+//     { cardSuit: 'heart', value: 'jack', color:'red'},
+//     { cardSuit: 'spade', value: 'queen', color:'black'},
+//     { cardSuit: 'diamond', value: 'queen', color:'red'},
+//     { cardSuit: 'clubs', value: 'queen', color:'black'},
+//     { cardSuit: 'heart', value: 'queen', color:'red'},
+//     { cardSuit: 'spade', value: 'king', color:'black'},
+//     { cardSuit: 'diamond', value: 'king', color:'red'},
+//     { cardSuit: 'clubs', value: 'king', color:'black'},
+//     { cardSuit: 'heart', value: 'king', color:'red'},
+//     { cardSuit: 'spade', value: 'ace', color:'black'},
+//     { cardSuit: 'diamond', value: 'ace', color:'red'},
+//     { cardSuit: 'clubs', value: 'ace', color:'black'},
+//     { cardSuit: 'heart', value: 'ace', color:'red'},
+// ]
+// - знайти піковий туз
+
+// let findAce=cards.filter((card)=>
+//     card.cardSuit==='spade' && card.value==='ace' && card.color==='black'
+// )
+// console.log(findAce)
+//
+//
+// // - всі шістки
+//
+// let findSix=cards.filter((card)=>
+//     card.value ==='6'
+// )
+//
+// console.log(findSix)
 //
 
-// - створити функцію яка повертає найменьше число з масиву
 
-// const minOf=(...array) => {
-//     let min = array[0]
-//     for (const item of array){
-//         if (item <min){
-//             min=item
+
+// - всі червоні карти
+
+// let findRed=cards.filter((card)=>
+//     card.color ==="red"
+// )
+// console.log(findRed)
+
+
+
+// - всі буби
+
+// let findDiamond=cards.filter((card)=>
+//     card.cardSuit==="diamond"
+// )
+//
+// console.log(findDiamond)
+
+
+// - всі трефи від 9 та більше
+
+// let findClubs=cards.filter((card)=>
+//     card.cardSuit==="clubs" && card.value >='9'
+// )
+// console.log(findClubs)
+//
+
+// {
+//     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+//         value: '', // '6'-'10', 'ace','jack','queen','king','joker'
+//     color:'', // 'red','black'
+// }
+
+
+// =========================
+//
+//     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+
+//
+// let cards=[
+//     { cardSuit: 'spade', value: '6', color:'black'},
+//     { cardSuit: 'diamond', value: '6', color:'red'},
+//     { cardSuit: 'clubs', value: '6', color:'black'},
+//     { cardSuit: 'heart', value: '6', color:'red'},
+//     { cardSuit: 'spade', value: '7', color:'black'},
+//     { cardSuit: 'diamond', value: '7', color:'red'},
+//     { cardSuit: 'clubs', value: '7', color:'black'},
+//     { cardSuit: 'heart', value: '7', color:'red'},
+//     { cardSuit: 'spade', value: '8', color:'black'},
+//     { cardSuit: 'diamond', value: '8', color:'red'},
+//     { cardSuit: 'clubs', value: '8', color:'black'},
+//     { cardSuit: 'heart', value: '8', color:'red'},
+//     { cardSuit: 'spade', value: '9', color:'black'},
+//     { cardSuit: 'diamond', value: '9', color:'red'},
+//     { cardSuit: 'clubs', value: '9', color:'black'},
+//     { cardSuit: 'heart', value: '9', color:'red'},
+//     { cardSuit: 'spade', value: '10', color:'black'},
+//     { cardSuit: 'diamond', value: '10', color:'red'},
+//     { cardSuit: 'clubs', value: '10', color:'black'},
+//     { cardSuit: 'heart', value: '10', color:'red'},
+//     { cardSuit: 'spade', value: 'jack', color:'black'},
+//     { cardSuit: 'diamond', value: 'jack', color:'red'},
+//     { cardSuit: 'clubs', value: 'jack', color:'black'},
+//     { cardSuit: 'heart', value: 'jack', color:'red'},
+//     { cardSuit: 'spade', value: 'queen', color:'black'},
+//     { cardSuit: 'diamond', value: 'queen', color:'red'},
+//     { cardSuit: 'clubs', value: 'queen', color:'black'},
+//     { cardSuit: 'heart', value: 'queen', color:'red'},
+//     { cardSuit: 'spade', value: 'king', color:'black'},
+//     { cardSuit: 'diamond', value: 'king', color:'red'},
+//     { cardSuit: 'clubs', value: 'king', color:'black'},
+//     { cardSuit: 'heart', value: 'king', color:'red'},
+//     { cardSuit: 'spade', value: 'ace', color:'black'},
+//     { cardSuit: 'diamond', value: 'ace', color:'red'},
+//     { cardSuit: 'clubs', value: 'ace', color:'black'},
+//     { cardSuit: 'heart', value: 'ace', color:'red'},
+// ]
+//
+//
+//
+// let reduce=cards.reduce((accumulator,card)=> {
+//         if (card.cardSuit === 'heart') {
+//             accumulator.hearts.push(card)
 //         }
+//         if (card.cardSuit === 'diamond') {
+//             accumulator.diamonds.push(card)
+//         }
+//         if (card.cardSuit === 'spade') {
+//             accumulator.spades.push(card)
+//
+//         } if (card.cardSuit==='clubs')
+//             accumulator.clubs.push(card)
+//         return accumulator
+//     }, {
+//     spades:[],
+//        diamonds:[],
+//      hearts:[],
+//      clubs:[]
+//  }
+// )
+// console.log(reduce)
+//
+
+
+// {
+//     spades:[],
+//         diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+// =========================
+
+//     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+//
+// let coursesArray = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
 //     }
-//     console.log('Min: ',min)
-//     return min
+// ];
 //
-// }
-// let min1=minOf(5,12,587,18)
+// const findSass=coursesArray.filter((item)=>{
+//     if (item.modules.includes('sass'))
+//     return item
+// })
+// console.log(findSass)
 //
+// const findDocker=coursesArray.filter((item)=>{
+//     if (item.modules.includes('docker'))
+//         return item
+// })
+// console.log(findDocker)
 
-
-// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-
-// const sum=(arr)=>{
-//         let total=0
-//    for (let i = 0; i < arr.length; i++) {
-//         total += arr[i]
-//    }
-//  return total
-//
-// }
-// let numbers=[5,8,4]
-// console.log(sum(numbers))
-
-
-// - створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах
-// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-
-// const swap=(arr, index1, index2) =>{
-//     if (index1 < 0 || index1 >= arr.length || index2 < 0 || index2 >= arr.length) {
-//         console.error('Mistake!');
-//          return arr;
-//      }
+// --написати пошук всіх об'єктів, в який в modules є sass
+// --написати пошук всіх об'єктів, в який в modules є docker
 //
 //
-//      const temp = arr[index1];
-//      arr[index1] = arr[index2];
-//       arr[index2] = temp;
 //
-//       return arr;
 //
-// }
-//   const arr = [11, 22, 33, 44];
-//   console.log(swap(arr, 0, 1));
-
-
-
-// - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
-// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
-
-// const exChange=(sumUAH,currencyValues,exchangeCurrency) =>{
-//         for (let item of currencyValues) {
-//        if (exchangeCurrency == item.currency)
-//              console.log(sumUAH / item.value)
 //
-//     }
 //
-// }
-// let arr=[
-//      {currency:'USD',value:40},
-//      {currency:'EUR',value:42}
-//  ]
 //
-//  exChange(10000,arr,'EUR')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
