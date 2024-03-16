@@ -1,358 +1,293 @@
-// - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
-// створити пустий масив, наповнити його 10 об'єктами new User(....)
+// - створити блок,
+//     - додати йому класи wrap, collapse, alpha, beta
+//
+// let block= document.createElement('div')
+//
+//     block.classList.add('wrap','collapse','alpha','beta')
+//
+// let parentElement=document.getElementById('parentElementId')
+//
+//
+//     if (parentElement){
+//         parentElement.append(block)
+//
+//     }else {
+//
+//         document.body.appendChild(block)
+//     }
+//
+//
+// // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
+//
+// block.style.backgroundColor='gray'
+// block.style.color='green'
+// block.style.fontSize='14px'
+//
+// // - додати цей блок в body.
+//
+// document.body.appendChild(block)
+//
+// // - клонувати його повністю, та додати клон в body.
+//
+// let clone=block.cloneNode(true)
+//
+// document.body.appendChild(clone)
+
 
 //
-
-// function User(id, name, surname , email, phone){
-//     this.id=id
-//     this.name=name
-//     this.surname=surname
-//     this.email=email
-//     this.phone=phone
+// - Є масив:
+//  let arr=  ['Main','Products','About us','Contacts']
+// // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+//
+// let ul=document.createElement('ul')
+//
+// for (const item of arr) {
+//     let li=document.createElement("ul")
+//     li.textContent=item
+//     ul.appendChild(li)
 // }
+// document.body.appendChild(ul)
+
+
+// - Є масив
+//  let coursesAndDurationArray = [
+//      {title: 'JavaScript Complex', monthDuration: 5},
+//      {title: 'Java Complex', monthDuration: 6},
+//      {title: 'Python Complex', monthDuration: 6},
+//      {title: 'QA Complex', monthDuration: 4},
+//      {title: 'FullStack', monthDuration: 7},
+//      {title: 'Frontend', monthDuration: 4}
+//  ];
+// // Для кожного елементу масиву зробити блок в якому вивести інформацію
+// // про title та monthDuration
+// // Завдання робити через цикли.
 //
 //
-// let users=[
-//         new User(10,'ivan','ivanov','vava@gmail.com', +380504896354),
-//         new User(2,'mukola','azarov','axar@gmail.com', +38050453985),
-//         new User(3,'viktor','viktorov','viktor@gmail.com', +380965642315),
-//         new User(7,'sergiy','sergeev','seriy@gmail.com', +380978654230),
-//         new User(6,'olexandr','olexandrenko','olex@gmail.com', +380501897462),
-//         new User(5,'stepan','stepanenko','stefi@gmail.com', +380502369851),
-//         new User(4,'viktoriya','viktorenko','vika@gmail.com', +380964230126),
-//         new User(8,'masha','mashenko','masha@gmail.com', +380993548209),
-//         new User(9,'maryna','marynenko','mari@gmail.com', +3805019784620),
-//         new User(1,'stas','stasiv','stan@gmail.com', +3805011122354),
+// for (let i = 0; i < coursesAndDurationArray.length; i++) {
 //
-// ]
-// console.log(users)
+//     let block=document.createElement("div")
+//     let course=coursesAndDurationArray[i]
+//     let content = document.createTextNode(course.title + ' - ' + course.monthDuration + ' місяці(в)')
+//     block.appendChild(content)
+//     document.body.appendChild(block)
+// }
+
+
+// =========================
+//
+//     - Є масив
+//  let coursesAndDurationArray = [
+//      {title: 'JavaScript Complex', monthDuration: 5},
+//      {title: 'Java Complex', monthDuration: 6},
+//      {title: 'Python Complex', monthDuration: 6},
+//      {title: 'QA Complex', monthDuration: 4},
+//      {title: 'FullStack', monthDuration: 7},
+//      {title: 'Frontend', monthDuration: 4}
+//  ];
 // //
-//
-// // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 // //
-// // let evenNumbers = users.filter((number) => {
-// //     return number.id % 2 === 0;
-// // });
+// // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
+// //     Завдання робити через цикли.
+//
+// for (let i = 0; i < coursesAndDurationArray.length; i++){
+//     let course=coursesAndDurationArray[i]
+//     let block=document.createElement("div")
+//     block.setAttribute('class','item')
+//     let h1=document.createElement("h1")
+//     h1.setAttribute('class','heading')
+//     let p=document.createElement("p")
+//     p.setAttribute('class','description')
+//     h1.innerText=course.title
+//     p.innerText=course.monthDuration
+//    block.append(h1,p)
+//
+//     document.body.appendChild(block)
+// }
+//
+
+//
+// ==========================
+
+
+//
+// - є масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
+
+// Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
+//     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
+//
+
+// let simpsons = [
+//     {
+//         name: 'Bart',
+//         surname: 'Simpson',
+//         age: 10,
+//         info: 'Бартолом\'ю ДжоДжо «Барт» Сімпсон (англ. Bartholomew JoJo «Bart» Simpson) — один із головних героїв мультиплікаційного серіалу Сімпсони. Барт — найстарша дитина Гомера і Мардж Сімпсон. У нього також є дві молодші сестри — Ліса і Меґґі. Барт є втіленням образу бешкетника та посереднього учня у школі. Разом зі своїм батьком Барт є одним із найвідоміших персонажів у цьому серіалі.',
+//         photo: 'https://upload.wikimedia.org/wikipedia/uk/a/aa/Bart_simpson.png'
+//     },
+//     {
+//         name: 'Homer',
+//         surname: 'Simpson',
+//         age: 40,
+//         info: 'Гомер Джей Сімпсон (англ. Homer Jay Simpson) — один із головних героїв мультсеріалу «Сімпсони». Гомер — грубий і неввічливий батько родини, він має очевидні вади: товстий, лисий і не дуже розумний. Нерідко він поводиться як блазень, абсурдно, егоїстично і нетактовно, але все ж лишається симпатичним.',
+//         photo: 'http://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
+//     },
+//     {
+//         name: 'Marge',
+//         surname: 'Simpson',
+//         age: 38,
+//         info: 'Ма́рджори Жакли́н «Мардж» Си́мпсон (в девичестве Бувье́) (англ. Marjorie Jacqueline «Marge» Simpson) — постоянный персонаж мультипликационного сериала «Симпсоны», её озвучивает Джулия Кавнер. Обычно носит зелёное платье, красные балетки, на шее — ожерелье из искусственного жемчуга и ездит на оранжевом универсале. У неё шикарные синие волосы, которые она обычно собирает в очень высокую причёску. Глаза цвета ореха (19s6e). Основное занятие — домохозяйка, большую часть времени проводит в заботе о доме, детях и Гомере. Образ Мардж копирует стереотип провинциальной американской домохозяйки 50-х годов. Мардж — единственный член семьи, посещающий церковь добровольно. Старается поддерживать нравственность не только своей семьи, но и всего города. Отлично готовит, особенно славятся её свиные отбивные и зефир. Любимое блюдо — лапша с маслом.',
+//         photo: 'https://upload.wikimedia.org/wikipedia/ru/0/0b/Marge_Simpson.png'
+//     },
+//     {
+//         name: 'Lisa',
+//         surname: 'Simpson',
+//         age: 9,
+//         info: 'Ли́за Мари́ Си́мпсон (англ. Lisa Marie Simpson) — героиня мультипликационного сериала «Симпсоны». Средний ребёнок в семье, восьмилетняя девочка, выделяющаяся среди остальных Симпсонов прежде всего своим умом и рассудительностью.',
+//         photo: 'https://upload.wikimedia.org/wikipedia/ru/e/ec/Lisa_Simpson.png'
+//     },
+//     {
+//         name: 'Maggie',
+//         surname: 'Simpson',
+//         age: 1,
+//         info: 'Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.',
+//         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
+//     },
+// ];
+//
+// for (let i = 0; i < simpsons.length; i++) {
+//
+//     for (let i = 0; i < simpsons.length; i++) {
+//         let item = simpsons[i]
+//         let block = document.createElement("div")
+//
+//         let h1 = document.createElement("h1")
+//
+//         let p = document.createElement("p")
+//
+//         let img=document.createElement("img")
+//
+//         h1.innerText = `${item.name}  ${item.surname}`
+//         p.innerText = item.info
+//         img.setAttribute('src',item.photo)// abo img.src=item.photo
+//         block.append(h1, p,img)
+//
+//         document.body.appendChild(block)
+//
+//     }
+// }
+//
+
+
+
+// =========================
+//     Цикл в циклі
+// - Є масив coursesArray котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
+
+// let coursesArray = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+//     }
+// ];
 // //
-// // console.log(evenNumbers);
-// //
+// // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+// // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
+//
+// let block=document.createElement('div')
+//     document.body.appendChild(block)
+//     block.classList.add('courses')
+// for (const courses of coursesArray) {
+//     let item=document.createElement('div')
+//     let coursesBlockH1=document.createElement('h1')
+//     let coursesBlockH2=document.createElement('h2')
+//     let coursesBlockH3=document.createElement('h3')
+//     let coursesBlockUl=document.createElement('ul')
+//     let coursesBlockLi=document.createElement('li')
+//     item.classList.add('item')
+//     coursesBlockH1.innerText=`${courses.title}`
+//     coursesBlockH2.innerText=`${courses.monthDuration}`
+//     coursesBlockH3.innerText=`${courses.hourDuration}`
 //
 //
-//
-// // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
-//
-// class Use{
-//     constructor(id) {
-//         this.id=id
+//     for (const module of courses.modules) {
+//         let moduleItem=document.createElement('li')
+//         moduleItem.textContent=module
+//         coursesBlockUl.appendChild(moduleItem)
 //     }
-// }
+//     item.appendChild(coursesBlockH1)
+//     item.appendChild(coursesBlockH2)
+//     item.appendChild(coursesBlockH3)
+//     item.appendChild(coursesBlockUl)
 //
-// users.sort((a,b)=>{
-//     return a.id - b.id
-// })
-// console.log(users)
-//
-//
-// - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
-// створити пустий масив, наповнити його 10 об'єктами Client
-
-// class Client{
-//     constructor(id,name,surname,email, phone, order) {
-//         this.id=id
-//         this.name=name
-//         this.surname=surname
-//         this.email=email
-//         this.phone=phone
-//         this.order=order
-//     }
-//
-//
+//     block.appendChild(item);
 // }
 //
 //
-// let clients =[
-//          new Client(10,'ivan','ivanov','vava@gmail.com', '+380504896354',2),
-//          new Client(2,'mukola','azarov','axar@gmail.com', '+38050453985',1),
-//          new Client(3,'viktor','viktorov','viktor@gmail.com', '+380965642315',4),
-//          new Client(7,'sergiy','sergeev','seriy@gmail.com', '+380978654230',3),
-//          new Client(6,'olexandr','olexandrenko','olex@gmail.com', '+380501897462',6),
-//          new Client(5,'stepan','stepanenko','stefi@gmail.com', '+380502369851',5),
-//          new Client(4,'viktoriya','viktorenko','vika@gmail.com', '+380964230126',8),
-//          new Client(8,'masha','mashenko','masha@gmail.com', '+380993548209',7),
-//          new Client(9,'maryna','marynenko','mari@gmail.com', '+3805019784620',10),
-//          new Client(1,'stas','stasiv','stan@gmail.com', '+3805011122354',9)
-//
-// ]
-//
-// console.log(clients)
-//
-//
-//
-// // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-//
-//
-//  class Cli{
-//      constructor(order) {
-//          this.order=order
-//      }
-//  }
-//
-//  clients.sort((a,b)=>{
-//      return a.order - b.order
-//  })
-//  console.log(clients)
-//
-
-
-
-// - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
-
-
-// function Car(model,company,year,maxSpeed,engine){
-//     this.model=model
-//     this.company=company
-//     this.year=year
-//     this.maxSpeed=maxSpeed
-//     this.engine=engine
-//     this.driver=null
-//     this.addDriver=function (driver){
-//         this.driver=driver
-//     }
-// }
-//
-// let cars=[
-//     new Car('BMW','Germany','1986','180','2.0'),
-//     new Car('Mercedes','Germany','2005','250','3,0'),
-//     new Car('Volkswagen','Germany','2007','230','2,0'),
-//     new Car('Opel','Germany','2001','199','2,5'),
-//     new Car('Audi','Germany','2018','300','1,9'),
-//     new Car('Toyota','Japan','2008','240','4,0'),
-//     new Car('Citroen','France','2012','150','1,6'),
-//     new Car('Mazda','Japan','2007','215','2,0'),
-//     new Car('Ford','USA','1999','200','5,0'),
-//     new Car('Kia','China','2014','140','1,4')
-// ]
-
-// -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
-
-// function drive(cars){
-//     cars.forEach((car)=>{
-//         if (car.model==='Ford'){ // Це просто для себе зробив щоб звернутися конкретно до авто
-//             console.log(`Швидкість ${car.model} ${car.maxSpeed} км/год на годину`)
-//         }
-//        console.log(`їдемо зі швидкістю ${car.maxSpeed} км/год на годину`)
-//     })
-//
-// }
-// drive(cars)
-
-// -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
-
-// function Info(cars){
-//     cars.forEach((car)=>{
-//         console.log(`model - ${car.model}, company - ${car.company}, year - ${car.year}, maxSpeed - ${car.maxSpeed}, engine - ${car.engine}  `)
-//     })
-// }
-//
-// Info(cars)
-
-
-// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
-
-
-// function increaseMaxSpeed(cars,newSpeed){
-//         cars.forEach((car)=>{
-//             car.maxSpeed=newSpeed
-//
-//         } )
-// }
-// increaseMaxSpeed(cars,'260')
-// console.log(cars)
 
 
 
 
-// -- changeYear (newValue) - змінює рік випуску на значення newValue
-
-
- // function changeYear(cars,changeYear){
- //         cars.forEach((car)=>{
- //             car.year=changeYear
- //
- //         } )
- // }
- // changeYear(cars,'2005')
- // console.log(cars)
-
-
-
-// addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-
-// let driverInfo={
-//     name: 'Sergiy',
-//     age:36,
-//
-// }
-//
-// cars[0].addDriver(driverInfo)
-// console.log(cars[0])
-//
-//
-
-
-
-
-
-// - (Те саме, тільки через клас)
-// Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
-
-//
-// class Car{
-//     constructor(model,company,year,maxSpeed,engine) {
-//         this.model = model
-//         this.company = company
-//         this.year = year
-//         this.maxSpeed = maxSpeed
-//         this.engine = engine
-//         this.driver=null
-//          this.addDriver=function (driver){
-//          this.driver=driver
-//      }}
-// }
-//
-//
-//
-// let cars=[
-//      new Car('BMW','Germany','1986','180','2.0'),
-//      new Car('Mercedes','Germany','2005','250','3,0'),
-//      new Car('Volkswagen','Germany','2007','230','2,0'),
-//      new Car('Opel','Germany','2001','199','2,5'),
-//      new Car('Audi','Germany','2018','300','1,9'),
-//      new Car('Toyota','Japan','2008','240','4,0'),
-//      new Car('Citroen','France','2012','150','1,6'),
-//      new Car('Mazda','Japan','2007','215','2,0'),
-//      new Car('Ford','USA','1999','200','5,0'),
-//      new Car('Kia','China','2014','140','1,4')
-//  ]
-
-// -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
-//
-//      function drive(cars){
-//      cars.forEach((car)=>{
-//          if (car.model==='Ford'){ // Це просто для себе зробив щоб звернутися конкретно до авто
-//              console.log(`Швидкість ${car.model} ${car.maxSpeed} км/год на годину`)
-//          }
-//         console.log(`їдемо зі швидкістю ${car.maxSpeed} км/год на годину`)
-//      })
-//
-//  }
-//  drive(cars)
-//
-//
-// // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
-//
-//  function Info(cars){
-//      cars.forEach((car)=>{
-//          console.log(`model - ${car.model}, company - ${car.company}, year - ${car.year}, maxSpeed - ${car.maxSpeed}, engine - ${car.engine}  `)
-//      })
-//  }
-//
-//  Info(cars)
-
-
-// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
-
- //     function increaseMaxSpeed(cars,newSpeed){
- //         cars.forEach((car)=>{
- //             car.maxSpeed=newSpeed
- //
- //         } )
- // }
- // increaseMaxSpeed(cars,'260')
- // console.log(cars)
- //
-
-
-
-// -- changeYear (newValue) - змінює рік випуску на значення newValue
-
-// function changeYear(cars,changeYear){
-//         cars.forEach((car)=>{
-//             car.year=changeYear
-//
-//         } )
-// }
-// changeYear(cars,'2005')
-// console.log(cars)
-
-
-
-// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-
-
-// let driverInfo={
-//      name: 'Sergiy',
-//      age:36,
-//
-//  }
-//
-//  cars[0].addDriver(driverInfo)
-//  console.log(cars[0])
-//
-
-
-// -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
-
-
-
- //
- //
- //
- // let cinderellas=[
- //     {name: 'vika',age:'18',size:'36'},
- //     {name: 'alina',age:'30',size:'38'},
- //     {name: 'masha',age:'29',size:'39'},
- //     {name: 'ivanka',age:'27',size:'40'},
- //     {name: 'olena',age:'28',size:'39'},
- //     {name: 'antonina',age:'24',size:'38'},
- //     {name: 'maryna',age:'23',size:'37'},
- //     {name: 'svitlana',age:'21',size:'36'},
- //     {name: 'renata',age:'25',size:'35'},
- //     {name: 'izabella',age:'19',size:'36'}
- //
- //     ]
-
-console.log(cinderellas)
-
-
-// Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
-//     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
-
-// class Prince {
-//     constructor(name, age, findShoes) {
-//         this.name = name;
-//         this.age = age;
-//         this.findShoes = findShoes;
-//     }
-// }
-//
-//
-//
-// let prince = new Prince('Stepan', 27, 37);
-//
-// let foundCinderella = null;
-// for (let i = 0; i < cinderellas.length; i++) {
-//     if (cinderellas[i].size === prince.findShoes) {
-//         foundCinderella = cinderellas[i];
-//         break;
-//     }
-// }
-//
-// if (foundCinderella) {
-//     console.log(`Принц ${prince.name} знайшов ${foundCinderella.name} туфельку`);
-// } else {
-//     console.log(`Принц ${prince.name} не знайшов туфельку`);
-// }
-
-
-//     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+// ------------------
