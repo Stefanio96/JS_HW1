@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <script>
+
+        let  currentDate = new Date()
+        let  sessions = JSON.parse(localStorage.getItem('sessions')) || []
+        sessions.push(currentDate.toString())
+        localStorage.setItem('sessions', JSON.stringify(sessions))
+    </script>
+</head>
+<body>
+
+<h1>Index Page</h1>
+
+</body>
+</html>

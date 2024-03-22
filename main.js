@@ -1,293 +1,149 @@
-// - створити блок,
-//     - додати йому класи wrap, collapse, alpha, beta
+// Стоврити форму з трьома полями для name,surname,age та кнопкою.
+// При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+
+// function submitForm() {
+//     let formData = {
+//         name: document.getElementById("name").value,
+//         surname: document.getElementById("surname").value,
 //
-// let block= document.createElement('div')
-//
-//     block.classList.add('wrap','collapse','alpha','beta')
-//
-// let parentElement=document.getElementById('parentElementId')
-//
-//
-//     if (parentElement){
-//         parentElement.append(block)
-//
-//     }else {
-//
-//         document.body.appendChild(block)
 //     }
 //
-//
-// // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
-//
-// block.style.backgroundColor='gray'
-// block.style.color='green'
-// block.style.fontSize='14px'
-//
-// // - додати цей блок в body.
-//
-// document.body.appendChild(block)
-//
-// // - клонувати його повністю, та додати клон в body.
-//
-// let clone=block.cloneNode(true)
-//
-// document.body.appendChild(clone)
-
-
-//
-// - Є масив:
-//  let arr=  ['Main','Products','About us','Contacts']
-// // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
-//
-// let ul=document.createElement('ul')
-//
-// for (const item of arr) {
-//     let li=document.createElement("ul")
-//     li.textContent=item
-//     ul.appendChild(li)
-// }
-// document.body.appendChild(ul)
-
-
-// - Є масив
-//  let coursesAndDurationArray = [
-//      {title: 'JavaScript Complex', monthDuration: 5},
-//      {title: 'Java Complex', monthDuration: 6},
-//      {title: 'Python Complex', monthDuration: 6},
-//      {title: 'QA Complex', monthDuration: 4},
-//      {title: 'FullStack', monthDuration: 7},
-//      {title: 'Frontend', monthDuration: 4}
-//  ];
-// // Для кожного елементу масиву зробити блок в якому вивести інформацію
-// // про title та monthDuration
-// // Завдання робити через цикли.
-//
-//
-// for (let i = 0; i < coursesAndDurationArray.length; i++) {
-//
-//     let block=document.createElement("div")
-//     let course=coursesAndDurationArray[i]
-//     let content = document.createTextNode(course.title + ' - ' + course.monthDuration + ' місяці(в)')
-//     block.appendChild(content)
-//     document.body.appendChild(block)
+//     // Отриманий об'єкт даних форми виводимо під формою
+//     let resultDiv = document.getElementById("result")
+//     resultDiv.innerHTML = "<pre>" + JSON.stringify(formData, null, 2) + "</pre>"
 // }
 
-
-// =========================
-//
-//     - Є масив
-//  let coursesAndDurationArray = [
-//      {title: 'JavaScript Complex', monthDuration: 5},
-//      {title: 'Java Complex', monthDuration: 6},
-//      {title: 'Python Complex', monthDuration: 6},
-//      {title: 'QA Complex', monthDuration: 4},
-//      {title: 'FullStack', monthDuration: 7},
-//      {title: 'Frontend', monthDuration: 4}
-//  ];
-// //
-// //
-// // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
-// //     Завдання робити через цикли.
-//
-// for (let i = 0; i < coursesAndDurationArray.length; i++){
-//     let course=coursesAndDurationArray[i]
-//     let block=document.createElement("div")
-//     block.setAttribute('class','item')
-//     let h1=document.createElement("h1")
-//     h1.setAttribute('class','heading')
-//     let p=document.createElement("p")
-//     p.setAttribute('class','description')
-//     h1.innerText=course.title
-//     p.innerText=course.monthDuration
-//    block.append(h1,p)
-//
-//     document.body.appendChild(block)
-// }
-//
-
-//
 // ==========================
+// є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+//
+// let numberElement = document.getElementById("number")
+//
+// let currentNumber = parseInt(numberElement.textContent)
+//
+// let newNumber = currentNumber + 1
+//
+// numberElement.textContent = newNumber
+//
+//
+//  ==========================
+// Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки.
+// Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
+// Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
 
 
-//
-// - є масив simpsons, котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
-
-// Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
-//     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
-//
-
-// let simpsons = [
-//     {
-//         name: 'Bart',
-//         surname: 'Simpson',
-//         age: 10,
-//         info: 'Бартолом\'ю ДжоДжо «Барт» Сімпсон (англ. Bartholomew JoJo «Bart» Simpson) — один із головних героїв мультиплікаційного серіалу Сімпсони. Барт — найстарша дитина Гомера і Мардж Сімпсон. У нього також є дві молодші сестри — Ліса і Меґґі. Барт є втіленням образу бешкетника та посереднього учня у школі. Разом зі своїм батьком Барт є одним із найвідоміших персонажів у цьому серіалі.',
-//         photo: 'https://upload.wikimedia.org/wikipedia/uk/a/aa/Bart_simpson.png'
-//     },
-//     {
-//         name: 'Homer',
-//         surname: 'Simpson',
-//         age: 40,
-//         info: 'Гомер Джей Сімпсон (англ. Homer Jay Simpson) — один із головних героїв мультсеріалу «Сімпсони». Гомер — грубий і неввічливий батько родини, він має очевидні вади: товстий, лисий і не дуже розумний. Нерідко він поводиться як блазень, абсурдно, егоїстично і нетактовно, але все ж лишається симпатичним.',
-//         photo: 'http://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
-//     },
-//     {
-//         name: 'Marge',
-//         surname: 'Simpson',
-//         age: 38,
-//         info: 'Ма́рджори Жакли́н «Мардж» Си́мпсон (в девичестве Бувье́) (англ. Marjorie Jacqueline «Marge» Simpson) — постоянный персонаж мультипликационного сериала «Симпсоны», её озвучивает Джулия Кавнер. Обычно носит зелёное платье, красные балетки, на шее — ожерелье из искусственного жемчуга и ездит на оранжевом универсале. У неё шикарные синие волосы, которые она обычно собирает в очень высокую причёску. Глаза цвета ореха (19s6e). Основное занятие — домохозяйка, большую часть времени проводит в заботе о доме, детях и Гомере. Образ Мардж копирует стереотип провинциальной американской домохозяйки 50-х годов. Мардж — единственный член семьи, посещающий церковь добровольно. Старается поддерживать нравственность не только своей семьи, но и всего города. Отлично готовит, особенно славятся её свиные отбивные и зефир. Любимое блюдо — лапша с маслом.',
-//         photo: 'https://upload.wikimedia.org/wikipedia/ru/0/0b/Marge_Simpson.png'
-//     },
-//     {
-//         name: 'Lisa',
-//         surname: 'Simpson',
-//         age: 9,
-//         info: 'Ли́за Мари́ Си́мпсон (англ. Lisa Marie Simpson) — героиня мультипликационного сериала «Симпсоны». Средний ребёнок в семье, восьмилетняя девочка, выделяющаяся среди остальных Симпсонов прежде всего своим умом и рассудительностью.',
-//         photo: 'https://upload.wikimedia.org/wikipedia/ru/e/ec/Lisa_Simpson.png'
-//     },
-//     {
-//         name: 'Maggie',
-//         surname: 'Simpson',
-//         age: 1,
-//         info: 'Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.',
-//         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
-//     },
-// ];
-//
-// for (let i = 0; i < simpsons.length; i++) {
-//
-//     for (let i = 0; i < simpsons.length; i++) {
-//         let item = simpsons[i]
-//         let block = document.createElement("div")
-//
-//         let h1 = document.createElement("h1")
-//
-//         let p = document.createElement("p")
-//
-//         let img=document.createElement("img")
-//
-//         h1.innerText = `${item.name}  ${item.surname}`
-//         p.innerText = item.info
-//         img.setAttribute('src',item.photo)// abo img.src=item.photo
-//         block.append(h1, p,img)
-//
-//         document.body.appendChild(block)
-//
-//     }
-// }
-//
-
-
+// Зробив!
 
 // =========================
-//     Цикл в циклі
-// - Є масив coursesArray котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
+//     зробити масив на 100 об'єктів та дві кнопки prev next
+// при завантажені сторінки з'являються перші 10 об'єктів.
+//     При натисканні next виводяться настпні 10 об'єктів
+// При натисканні prev виводяться попередні 10 об'єктів
 
-// let coursesArray = [
-//     {
-//         title: 'JavaScript Complex',
-//         monthDuration: 5,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-//     },
-//     {
-//         title: 'Java Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'java core',
-//             'java advanced']
-//     },
-//     {
-//         title: 'Python Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'python core',
-//             'python advanced']
-//     },
-//     {
-//         title: 'QA Complex',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-//     },
-//     {
-//         title: 'FullStack',
-//         monthDuration: 7,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'react',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'node.js',
-//             'python',
-//             'java']
-//     },
-//     {
-//         title: 'Frontend',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+
+// const objJson = [
+//     { adName: "AdName 1"},
+//     { adName: "AdName 2"},
+//     { adName: "AdName 3"},
+//     { adName: "AdName 4"},
+//     { adName: "AdName 5"},
+//     { adName: "AdName 6"},
+//     { adName: "AdName 7"},
+//     { adName: "AdName 8"},
+//     { adName: "AdName 9"},
+//     { adName: "AdName 10"},
+//     { adName: "AdName 2"},
+//     { adName: "AdName 3"},
+//     { adName: "AdName 4"},
+//     { adName: "AdName 5"},
+//     { adName: "AdName 32"},
+//     { adName: "AdName 73"},
+//     { adName: "AdName 84"},
+//     { adName: "AdName 95"},
+//     { adName: "AdName 10"},
+//     { adName: "AdName 32"},
+//     { adName: "AdName 36"},
+//     { adName: "AdName 48"},
+//     { adName: "AdName 5"},
+//     { adName: "AdName 60"},
+//     { adName: "AdName 76"},
+//     { adName: "AdName 88"},
+//     { adName: "AdName 94"},
+//     { adName: "AdName 10"},
+// ]
+//
+//
+// const parentButton = document.getElementById("parentButton")
+// const prevButton = document.getElementById("prev")
+// const nextButton = document.getElementById("next")
+//
+// let startIndex=0
+//
+//
+// function displayObjects(startIndex) {
+//     parentButton.innerHTML = ""
+//     for (let i = startIndex; i < startIndex + 10; i++) {
+//         if (i >= objJson.length) break
+//         const div = document.createElement("div")
+//         div.textContent = objJson[i].adName
+//         parentButton.appendChild(div)
 //     }
-// ];
-// //
-// // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
-// // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
-//
-// let block=document.createElement('div')
-//     document.body.appendChild(block)
-//     block.classList.add('courses')
-// for (const courses of coursesArray) {
-//     let item=document.createElement('div')
-//     let coursesBlockH1=document.createElement('h1')
-//     let coursesBlockH2=document.createElement('h2')
-//     let coursesBlockH3=document.createElement('h3')
-//     let coursesBlockUl=document.createElement('ul')
-//     let coursesBlockLi=document.createElement('li')
-//     item.classList.add('item')
-//     coursesBlockH1.innerText=`${courses.title}`
-//     coursesBlockH2.innerText=`${courses.monthDuration}`
-//     coursesBlockH3.innerText=`${courses.hourDuration}`
-//
-//
-//     for (const module of courses.modules) {
-//         let moduleItem=document.createElement('li')
-//         moduleItem.textContent=module
-//         coursesBlockUl.appendChild(moduleItem)
-//     }
-//     item.appendChild(coursesBlockH1)
-//     item.appendChild(coursesBlockH2)
-//     item.appendChild(coursesBlockH3)
-//     item.appendChild(coursesBlockUl)
-//
-//     block.appendChild(item);
 // }
 //
+// displayObjects(startIndex)
 //
+//
+// nextButton.addEventListener("click", function() {
+//     startIndex = Math.min(startIndex + 10, objJson.length - 10)
+//     displayObjects(startIndex)
+// })
+//
+//
+// prevButton.addEventListener("click", function() {
+//     startIndex = Math.max(startIndex - 10, 0)
+//     displayObjects(startIndex)
+// })
+
+
+// - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+//
+// document.getElementById('button').addEventListener('click',function (){
+//     let el=document.getElementById('text')
+//     if (el.style.display !=='none'){
+//         el.style.display ='none'
+//     }else {
+//         el.style.display = 'block'
+//     }
+// })
+
+
+
+//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18,
+//     та повідомити про це користувача
+//
+// document.getElementById('inspectAgeBtn').addEventListener('click',function (){
+//     let age=document.getElementById('age').value
+//     if (age >=18){
+//         alert('access is allowed')
+//     }else {
+//         alert('Access is denied')
+//     }
+// })
+//
+// *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
+//     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
+// (Додаткова частина для завдання)
+
+
+
+//
+// *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+// при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+//     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+//     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 
 
 
 
-// ------------------
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions Page</title>
+</head>
+<body>
+
+<h1>Sessions Page</h1>
+
+<div id="sessions"></div>
+
+<script>
+
+    let sessionsDiv = document.getElementById('sessions')
+    let sessions = JSON.parse(localStorage.getItem('sessions')) || []
+    sessions.forEach(function(session) {
+        let sessionElement = document.createElement('div')
+        sessionElement.textContent = session
+        sessionsDiv.appendChild(sessionElement)
+    });
+</script>
+
+</body>
+</html>
