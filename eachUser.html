@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            font-family: Bahnschrift;
+            font-size: 20px;
+        }
+        body{
+            background: #25cbc0;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<script>
+const userID=new URL(location.href).searchParams.get('id')
+
+
+fetch(`http://jsonplaceholder.typicode.com/users/${userID}`)
+    .then(res => res.json())
+    .then(user=> {
+        console.log(user)
+
+        let block=document.createElement('div')
+
+
+        let ul=document.createElement("ul")
+
+
+        for (const info in user) {
+            let li = document.createElement('li');
+            li.innerText = `${info}: ${typeof user[info] === 'object' ? JSON.stringify(user[info]) : user[info]}`
+            ul.appendChild(li)
+        }
+
+
+        block.appendChild(ul)
+        document.body.appendChild(block)
+    })
+
+</script>
+
+<h3><a href="users.html">back</a></h3>
+</body>
+</html>
